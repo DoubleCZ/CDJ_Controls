@@ -160,8 +160,8 @@ AddEventHandler('playerDropped', function()
     if src == state.djSource then
         state.djSource = 0
         state.isLive   = false
-        state.deckA    = { url = '', isPlaying = false, startServerTime = 0.0, volume = 1.0, pitch = 1.0 }
-        state.deckB    = { url = '', isPlaying = false, startServerTime = 0.0, volume = 1.0, pitch = 1.0 }
+        state.deckA    = { url = '', isPlaying = false, startServerTime = 0.0, accumulated = 0.0, volume = 1.0, pitch = 1.0, eq = { hi = 0.0, mid = 0.0, lo = 0.0 } }
+        state.deckB    = { url = '', isPlaying = false, startServerTime = 0.0, accumulated = 0.0, volume = 1.0, pitch = 1.0, eq = { hi = 0.0, mid = 0.0, lo = 0.0 } }
         TriggerClientEvent('rave:client:djLeft', -1)
     end
 end)
